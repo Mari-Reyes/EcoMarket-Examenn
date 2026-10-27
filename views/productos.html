@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMarket | Mercado Digital de Productos Sustentables</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header>
+    <a href="../index.html" class="logo">EcoMarket</a>
+    
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="productos.html">Catálogo</a></li>
+        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <form role="search" action="/buscar" method="get" class="header-search">
+      <div class="search-input-wrapper">
+        <input 
+          type="search" 
+          id="search-input" 
+          name="q" 
+          placeholder="Buscar productos ecológicos..." 
+          required
+        >
+        <button type="submit" aria-label="Buscar">
+          <img src="../img/icons/search.svg" alt="" class="btn-icon-sm">
+          <span>Buscar</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="user-actions">
+      <a href="#favoritos" class="user-btn">
+        <img src="../img/icons/borderstar.svg" alt="" class="btn-icon-sm">
+        <span>Favoritos</span>
+      </a>
+      <a href="#carrito" class="user-btn" aria-label="Carrito de compras con 0 artículos">
+        <img src="../img/icons/cart.svg" alt="" class="btn-icon-sm">
+        <span>Carrito (0)</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero-catalog" style="background-image: url('../img/hero/hero-products.png');">
+      <span class="badge">Catálogo Consciente</span>
+      <h1>Nuestra Colección de Productos Sustentables</h1>
+      <p>
+        Explora alternativas ecológicas, duraderas y libres de plásticos de un solo uso para transformar tu hogar paso a paso.
+      </p>
+    </section>
+
+    <!-- Contenedor del Catálogo (Filtros a la izquierda, Productos a la derecha) -->
+    <div class="catalog-container">
+
+      <!-- BARRA LATERAL DE FILTROS -->
+      <aside class="catalog-filters">
+        
+        <div class="filter-group search-filter">
+          <h3>Buscar</h3>
+          <div class="search-box">
+            <img src="../img/icons/search.svg" alt="" class="sidebar-search-icon">
+            <input type="text" placeholder="Buscar por nombre o material..." aria-label="Buscar por nombre o material">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3>Categorías</h3>
+          <ul class="filter-list">
+            <li>
+              <label>
+                <input type="checkbox" name="categoria" value="todas" checked> 
+                Todas las Categorías (32)
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="categoria" value="cocina"> 
+                Cocina &amp; Comedor Zero Waste (7)
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="categoria" value="cuidado-personal"> 
+                Cuidado Personal &amp; Baño Botánico (7)
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="categoria" value="limpieza"> 
+                Organización &amp; Limpieza Verde (6)
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="categoria" value="textiles"> 
+                Textiles Orgánicos &amp; Confort (6)
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="categoria" value="esenciales"> 
+                Esenciales para el Día a Día (6)
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sort-options">
+          <label for="sort-select">Ordenar por:</label>
+          <select id="sort-select" name="sort">
+            <option value="populares">Más populares</option>
+            <option value="precio-menor">Precio: Menor a Mayor</option>
+            <option value="precio-mayor">Precio: Mayor a Menor</option>
+            <option value="novedades">Novedades</option>
+          </select>
+        </div>
+
+      </aside>
+
+      <!-- SECCIÓN DE RESULTADOS (CUADRÍCULA DE PRODUCTOS EN PANTALLA COMPLETA) -->
+      <section class="catalog-results">
+
+        <div class="results-header">
+          <p class="results-count">Mostrando 32 de 32 productos ecológicos</p>
+          
+          <div class="sort-options">
+            <label for="sort-select">Ordenar por:</label>
+            <select id="sort-select">
+              <option value="populares">Más populares</option>
+              <option value="precio-menor">Precio: Menor a Mayor</option>
+              <option value="precio-mayor">Precio: Mayor a Menor</option>
+              <option value="novedades">Novedades</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-grid">
+
+          <!-- ================= CATEGORÍA 1: Cocina & Comedor Zero Waste (7) ================= -->
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Silicona Platino 100% Libre de BPA</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/1-Cocina-&-Comedor-Zero-Waste-(7Productos)/BorealCoverSet.jpg" alt="Boreal Cover Set">
+            </div>
+            <h3>Boreal Cover Set</h3>
+            <p>Cubiertas elásticas y reutilizables para recipientes de comida, pensadas para sustituir el papel film transparente y conservar la frescura.</p>
+            <div class="product-card-footer">
+              <span class="price">$18.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Algodón Orgánico &amp; Cera de Abejas</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/1-Cocina-&-Comedor-Zero-Waste-(7Productos)/PanalBeeWrap.jpg" alt="Panal BeeWrap">
+            </div>
+            <h3>Panal BeeWrap</h3>
+            <p>Envoltorios biodegradables que se moldean con el calor de las manos para guardar frutas, verduras, pan y quesos.</p>
+            <div class="product-card-footer">
+              <span class="price">$14.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Malla de Algodón Orgánico GOTS</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/1-Cocina-&-Comedor-Zero-Waste-(7Productos)/NubeMeshBags.jpg" alt="Nube Mesh Bags">
+            </div>
+            <h3>Nube Mesh Bags</h3>
+            <p>Bolsas livianas y transpirables con cordón ajustable para comprar frutas, verduras y granos a granel sin bolsas plásticas.</p>
+            <div class="product-card-footer">
+              <span class="price">$11.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Fibra de Bambú &amp; Madera de Bambú</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/1-Cocina-&-Comedor-Zero-Waste-(7Productos)/TerraboxBento.jpg" alt="Terrabox Bento">
+            </div>
+            <h3>Terrabox Bento</h3>
+            <p>Fiambrera hermética con divisores internos desmontables para transportar comidas cotidianas de forma práctica.</p>
+            <div class="product-card-footer">
+              <span class="price">$24.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Vidrio Borosilicato &amp; Silicona Reciclable</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/1-Cocina-&-Comedor-Zero-Waste-(7Productos)/SilvanGlassHydrator.jpg" alt="Silvan Glass Hydrator">
+            </div>
+            <h3>Silvan Glass Hydrator</h3>
+            <p>Botella ergonómica para agua resistente a choques térmicos, ideal para mantenerte hidratado en el hogar o la oficina.</p>
+            <div class="product-card-footer">
+              <span class="price">$19.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Caña de Bambú Moso Pulida</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/1-Cocina-&-Comedor-Zero-Waste-(7Productos)/BorealStrawsKit.jpg" alt="Boreal Straws Kit">
+            </div>
+            <h3>Boreal Straws Kit</h3>
+            <p>Set de sorbetes reutilizables con cepillo limpiador de cerdas naturales y funda de tela para almacenamiento.</p>
+            <div class="product-card-footer">
+              <span class="price">$9.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Vidrio Reciclado &amp; Carbón de Coco</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/1-Cocina-&-Comedor-Zero-Waste-(7Productos)/AuraFilterPitcher.jpg" alt="Aura Filter Pitcher">
+            </div>
+            <h3>Aura Filter Pitcher</h3>
+            <p>Jarra de mesa para filtrado de agua de grifo que reduce impurezas y mejora el sabor de forma natural.</p>
+            <div class="product-card-footer">
+              <span class="price">$34.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <!-- ================= CATEGORÍA 2: Cuidado Personal & Baño Botánico (7) ================= -->
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Bambú Compostable &amp; Fibra de Carbón</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/2-Cuidado-Personal-&-Baño-Botánico-(7Productos)/BambuSmileBrushSet.jpg" alt="BambuSmile Brush Set">
+            </div>
+            <h3>BambuSmile Brush Set</h3>
+            <p>Cepillos de dientes ergonómicos de uso diario con cerdas suavemente estructuradas para una higiene bucal consciente.</p>
+            <div class="product-card-footer">
+              <span class="price">$12.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Aceites Orgánicos &amp; Cítricos Naturales</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/2-Cuidado-Personal-&-Baño-Botánico-(7Productos)/CitrusBotanicalSoapBar.jpg" alt="Citrus Botanical Soap Bar">
+            </div>
+            <h3>Citrus Botanical Soap Bar</h3>
+            <p>Barra de champú sólido concentrado que rinde hasta 80 lavados, limpiando e hidratando el cabello sin generar residuos plásticos.</p>
+            <div class="product-card-footer">
+              <span class="price">$9.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Fibra Vegetal de Lufa 100% Biodegradable</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/2-Cuidado-Personal-&-Baño-Botánico-(7Productos)/AuraLoofahSponge.jpg" alt="Aura Loofah Sponge">
+            </div>
+            <h3>Aura Loofah Sponge</h3>
+            <p>Esponja vegetal exfoliante que estimula la circulación cutánea y elimina células muertas suavemente.</p>
+            <div class="product-card-footer">
+              <span class="price">$6.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Fibra de Bambú &amp; Algodón Orgánico</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/2-Cuidado-Personal-&-Baño-Botánico-(7Productos)/SedaVelvetPads.jpg" alt="Seda Velvet Pads">
+            </div>
+            <h3>Seda Velvet Pads</h3>
+            <p>Discos desmaquillantes y limpiadores faciales lavables y reutilizables, acompañados de una bolsa de malla para lavado.</p>
+            <div class="product-card-footer">
+              <span class="price">$13.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Aleación de Latón &amp; Acero Inoxidable</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/2-Cuidado-Personal-&-Baño-Botánico-(7Productos)/ZenithSafetyRazor.jpg" alt="Zenith Safety Razor">
+            </div>
+            <h3>Zenith Safety Razor</h3>
+            <p>Maquinilla de afeitar clásica reutilizable de larga duración con hojas intercambiables universales.</p>
+            <div class="product-card-footer">
+              <span class="price">$26.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Carbonato de Calcio &amp; Xilitol Natural</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/2-Cuidado-Personal-&-Baño-Botánico-(7Productos)/MentaFreshTabs.jpg" alt="Menta Fresh Tabs">
+            </div>
+            <h3>Menta Fresh Tabs</h3>
+            <p>Pastillas masticables de dentífrico para un cepillado fresco sin necesidad de tubos de plástico.</p>
+            <div class="product-card-footer">
+              <span class="price">$10.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Bambú Sostenible &amp; Algodón Orgánico</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/2-Cuidado-Personal-&-Baño-Botánico-(7Productos)/BotanicaEarCleaners.jpg" alt="Botanica Ear Cleaners">
+            </div>
+            <h3>Botanica Ear Cleaners</h3>
+            <p>Bastoncillos para oídos 100% biodegradables y compostables para el cuidado personal diario.</p>
+            <div class="product-card-footer">
+              <span class="price">$5.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <!-- ================= CATEGORÍA 3: Organización & Limpieza Verde (6) ================= -->
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Cáscara de Coco &amp; Látex Vegetal</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/3-Organización-&-Limpieza-Verde-(6Productos)/CoconutScrubPads.jpg" alt="Coconut Scrub Pads">
+            </div>
+            <h3>Coconut Scrub Pads</h3>
+            <p>Estropajos multiusos duraderos para lavar platos, ollas y sartenes sin rayar las superficies.</p>
+            <div class="product-card-footer">
+              <span class="price">$8.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Celulosa de Madera &amp; Algodón Orgánico</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/3-Organización-&-Limpieza-Verde-(6Productos)/SolsticioSwedishCloths.jpg" alt="Solsticio Swedish Cloths">
+            </div>
+            <h3>Solsticio Swedish Cloths</h3>
+            <p>Bayetas ultra absorbentes de secado rápido que reemplazan hasta 15 rollos de papel de cocina.</p>
+            <div class="product-card-footer">
+              <span class="price">$11.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Madera de Haya &amp; Fibra de Agave</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/3-Organización-&-Limpieza-Verde-(6Productos)/CacaoWoodDishBrush.jpg" alt="Cacao Wood Dish Brush">
+            </div>
+            <h3>Cacao Wood Dish Brush</h3>
+            <p>Cepillo de cocina ergonómico con cabezal intercambiable para limpiar vajilla profundamente.</p>
+            <div class="product-card-footer">
+              <span class="price">$14.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Tensioactivos Vegetales &amp; Cartón Reciclado</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/3-Organización-&-Limpieza-Verde-(6Productos)/EcoverdeLaundrySheets.jpg" alt="Ecoverde Laundry Sheets">
+            </div>
+            <h3>Ecoverde Laundry Sheets</h3>
+            <p>Tiras de detergente ultra concentrado solubles en agua fría y caliente para lavado de ropa sin plásticos.</p>
+            <div class="product-card-footer">
+              <span class="price">$16.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Algodón &amp; Yute Reciclados</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/3-Organización-&-Limpieza-Verde-(6Productos)/OrganzaGarmentBags.jpg" alt="Organza Garment Bags">
+            </div>
+            <h3>Organza Garment Bags</h3>
+            <p>Fundas de tela transpirables para proteger ropa de temporada en el armario o armario de blancos.</p>
+            <div class="product-card-footer">
+              <span class="price">$21.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Lino Natural &amp; Algodón No Blanqueado</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/3-Organización-&-Limpieza-Verde-(6Productos)/LinenStorageBaskets.jpg" alt="Linen Storage Baskets">
+            </div>
+            <h3>Linen Storage Baskets</h3>
+            <p>Cestas textiles estéticas y plegables para organizar toallas, prendas o mantas en el hogar.</p>
+            <div class="product-card-footer">
+              <span class="price">$28.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <!-- ================= CATEGORÍA 4: Textiles Orgánicos & Confort (6) ================= -->
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">100% Algodón Orgánico GOTS</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/4-Textiles-Orgánicos-&-Confort-(6Productos)/BorealWaffleTowelSet.jpg" alt="Boreal Waffle Towel Set">
+            </div>
+            <h3>Boreal Waffle Towel Set</h3>
+            <p>Juego de toallas con textura de gofre de secado rápido, livianas y de alta absorción para el baño.</p>
+            <div class="product-card-footer">
+              <span class="price">$38.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">100% Fibra de Eucalipto (Tencel Lyocell)</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/4-Textiles-Orgánicos-&-Confort-(6Productos)/SedaBotanicalSheets.jpg" alt="Seda Botanical Sheets">
+            </div>
+            <h3>Seda Botanical Sheets</h3>
+            <p>Juego de sábanas suaves, frescas y termorreguladoras para garantizar un descanso óptimo.</p>
+            <div class="product-card-footer">
+              <span class="price">$85.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">100% Lino Orgánico</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/4-Textiles-Orgánicos-&-Confort-(6Productos)/NubeLinenNapkinsSet.jpg" alt="Nube Linen Napkins Set">
+            </div>
+            <h3>Nube Linen Napkins Set</h3>
+            <p>Servilletas de tela lavables con acabado natural elegante para mesas de uso diario o reuniones.</p>
+            <div class="product-card-footer">
+              <span class="price">$22.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Algodón Reciclado Post-Industrial</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/4-Textiles-Orgánicos-&-Confort-(6Productos)/TerracotaThrowBlanket.jpg" alt="Terracota Throw Blanket">
+            </div>
+            <h3>Terracota Throw Blanket</h3>
+            <p>Manta liviana y acogedora para sofás o camas con tejido táctil en tonos tierra.</p>
+            <div class="product-card-footer">
+              <span class="price">$45.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Lona de Algodón Orgánico &amp; Yute</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/4-Textiles-Orgánicos-&-Confort-(6Productos)/ZenithKitchenApron.jpg" alt="Zenith Kitchen Apron">
+            </div>
+            <h3>Zenith Kitchen Apron</h3>
+            <p>Delantal de cocina con bolsillos frontales útiles y tiras ajustables para un trabajo cómodo en el hogar.</p>
+            <div class="product-card-footer">
+              <span class="price">$29.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Lino Orgánico &amp; Cáñamo</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/4-Textiles-Orgánicos-&-Confort-(6Productos)/FloraCushionCovers.jpg" alt="Flora Cushion Covers">
+            </div>
+            <h3>Flora Cushion Covers</h3>
+            <p>Fundas decorativas para cojines de sala o dormitorio con tonos naturales relajantes.</p>
+            <div class="product-card-footer">
+              <span class="price">$24.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <!-- ================= CATEGORÍA 5: Esenciales para el Día a Día & Movilidad (6) ================= -->
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Lona de Algodón Reciclado</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/5-Esenciales-para-el-Día-a-Día-&-Movilidad-(6Productos)/UrbanCanvasTote.jpg" alt="Urban Canvas Tote">
+            </div>
+            <h3>Urban Canvas Tote</h3>
+            <p>Bolsa de hombro resistente de gran capacidad con bolsillo interno para compras o actividades cotidianas.</p>
+            <div class="product-card-footer">
+              <span class="price">$22.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Acero Inoxidable 18/8 &amp; Bambú Natural</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/5-Esenciales-para-el-Día-a-Día-&-Movilidad-(6Productos)/ThermoSilvaCoffeeMug.jpg" alt="ThermoSilva Coffee Mug">
+            </div>
+            <h3>ThermoSilva Coffee Mug</h3>
+            <p>Vaso térmico de doble pared con cierre hermético que mantiene bebidas calientes por 6 horas o frías por 12 horas.</p>
+            <div class="product-card-footer">
+              <span class="price">$25.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Tela de Cáñamo &amp; Algodón Fortificado</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/5-Esenciales-para-el-Día-a-Día-&-Movilidad-(6Productos)/CáñamoKeyPouch.jpg" alt="Cáñamo Key Pouch">
+            </div>
+            <h3>Cáñamo Key Pouch</h3>
+            <p>Estuche compacto para organizar llaves, tarjetas y monedas sin ocupar demasiado espacio.</p>
+            <div class="product-card-footer">
+              <span class="price">$12.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Plástico ABS Reciclado &amp; Silicio Monocristalino</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/5-Esenciales-para-el-Día-a-Día-&-Movilidad-(6Productos)/SolarisPortablePowerbank.jpg" alt="Solaris Portable Powerbank">
+            </div>
+            <h3>Solaris Portable Powerbank</h3>
+            <p>Batería portátil de carga solar compacta para mantener tus dispositivos móviles con energía fuera de casa.</p>
+            <div class="product-card-footer">
+              <span class="price">$42.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Bambú Moso Pulido &amp; Estuche de Algodón</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/5-Esenciales-para-el-Día-a-Día-&-Movilidad-(6Productos)/BambuCutleryRoll.jpg" alt="Bambu Cutlery Roll">
+            </div>
+            <h3>BambuCutlery Roll</h3>
+            <p>Estuche enrollable con tenedor, cuchillo, cuchara y palillos para comer fuera de casa sin cubiertos desechables.</p>
+            <div class="product-card-footer">
+              <span class="price">$16.50 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
+              <img src="../img/icons/heart.svg" alt="">
+            </button>
+            <span class="product-badge">Papel de Caña de Azúcar &amp; Cartón Reciclado</span>
+            <div class="product-img-wrapper">
+              <img src="../img/products/5-Esenciales-para-el-Día-a-Día-&-Movilidad-(6Productos)/RaízJournal&Pen.jpg" alt="Raíz Journal &amp; Pen">
+            </div>
+            <h3>Raíz Journal &amp; Pen</h3>
+            <p>Cuaderno para notas cotidianas acompañado de un bolígrafo recargable compostable.</p>
+            <div class="product-card-footer">
+              <span class="price">$15.00 USD</span>
+              <button type="button" class="btn btn-add">Agregar al carrito</button>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer>
+    <div class="footer-columns">
+      
+      <div class="footer-col">
+        <h3>EcoMarket</h3>
+        <p>Tu mercado digital de confianza para productos sostenibles, reutilizables y éticos.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="productos.html">Catálogo Completo</a></li>
+          <li><a href="sobre-nosotros.html">Nuestra Historia</a></li>
+          <li><a href="contacto.html">Contacto &amp; Soporte</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>Email: <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a></p>
+        <p>Teléfono: <a href="tel:+573171236789">+57 (317) 123 6789</a></p>
+        <p>Ubicación: Bucaramanga, Santander</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 EcoMarket. Todos los derechos reservados. Diseñado para un consumo consciente.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

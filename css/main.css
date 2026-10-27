@@ -1,0 +1,216 @@
+/* ==========================================================================
+   EcoMarket — main.css (Variables, reset y reglas globales por página)
+   ========================================================================== */
+
+:root {
+  --green: #27ae60;
+  --green-dark: #1e8449;
+  --emerald: #2ecc71;
+  --bg: #f5f5dc;
+  --card: #fdfdf9;
+  --sand: #e6e2d3;
+  --terracotta: #c06c3d;
+  --terracotta-ink: #8a4a26;
+  --cacao: #4a3b32;
+  --ink: #1a2e22;
+  --muted: #54655a;
+
+  --line: 1.5px solid rgba(74, 59, 50, 0.35);
+  --line-strong: 1.5px solid var(--cacao);
+  --radius: 16px;
+  --radius-lg: 24px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --maxw: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3, h4 { margin: 0 0 0.5rem; line-height: 1.2; font-weight: 800; color: var(--ink); }
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+h3 { font-size: 1.1rem; }
+h4 { font-size: 1rem; }
+
+p { margin: 0 0 1rem; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+a { color: var(--green-dark); text-decoration: none; }
+a:hover { color: var(--ink); }
+
+:focus-visible {
+  outline: 3px solid var(--green-dark);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reglas por vista mediante :has() */
+main:has(.hero) .hero h1 { max-width: 18ch; margin-inline: auto; }
+main:has(.catalog-container) .hero-catalog { padding-block: clamp(1.75rem, 4vw, 3rem); text-align: left; }
+main:has(.catalog-container) .hero-catalog p { margin-inline: 0; }
+main:has(.hero-about) .hero-about h1 { max-width: 20ch; margin-inline: auto; }
+
+main:has(.contact-form-section) {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-areas:
+    "hero hero"
+    "form info"
+    "faq  faq";
+  column-gap: clamp(1.5rem, 4vw, 3rem);
+  row-gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: start;
+}
+main:has(.contact-form-section) > .hero-contact { grid-area: hero; }
+main:has(.contact-form-section) > .contact-form-section { grid-area: form; text-align: left; margin: 0; max-width: none; }
+main:has(.contact-form-section) > .contact-channels { grid-area: info; }
+main:has(.contact-form-section) > .faq-section { grid-area: faq; }
+main:has(.contact-form-section) .channels-grid { grid-template-columns: 1fr; }
+
+@media (max-width: 900px) {
+  main:has(.contact-form-section) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "hero"
+      "form"
+      "info"
+      "faq";
+  }
+}
+
+/* --- Prevenir cualquier desplazamiento horizontal global --- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- Ajustes de la cabecera para pantallas de celulares --- */
+@media (max-width: 768px) {
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 1. Logo centrado */
+  header .logo {
+    margin-bottom: 0.25rem;
+  }
+
+  /* 2. Botones de Favoritos y Carrito en una sola fila */
+  .user-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .user-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* 3. Buscador ocupando todo el ancho */
+  .header-search {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  .search-input-wrapper input {
+    width: 100%;
+    min-width: 0; /* Permite que el input se reduzca sin desbordar */
+  }
+
+  /* 4. Menú de navegación adaptable */
+  nav[aria-label="Navegación principal"] {
+    width: 100%;
+    overflow-x: auto; /* Permite deslizar los enlaces suavemente sin barra visible */
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+  }
+
+  nav[aria-label="Navegación principal"]::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento fea en Chrome/Safari */
+  }
+
+  nav[aria-label="Navegación principal"] ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Hace que los enlaces pasen abajo si no caben */
+    gap: 0.75rem 1.25rem;
+    padding: 0.25rem 0;
+    margin: 0;
+  }
+
+  nav[aria-label="Navegación principal"] a {
+    font-size: 0.9rem;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Oculta cualquier scroll horizontal accidental */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  /* Convierte las cuadrículas múltiples en una sola columna en pantallas medianas/pequeñas */
+  .benefits, .product-grid, .footer-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Ajusta los espacios internos (padding y márgenes) de las secciones principales */
+  .hero {
+    padding: 2.5rem 1rem;
+    margin: 1rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Para celulares muy pequeños, permite catálogos de 2 columnas compactas */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}

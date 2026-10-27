@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMarket | Mercado Digital de Productos Sustentables</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header>
+    <a href="../index.html" class="logo">EcoMarket</a>
+    
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="productos.html">Catálogo</a></li>
+        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <form role="search" action="/buscar" method="get" class="header-search">
+      <div class="search-input-wrapper">
+        <input 
+          type="search" 
+          id="search-input" 
+          name="q" 
+          placeholder="Buscar productos ecológicos..." 
+          required
+        >
+        <button type="submit" aria-label="Buscar">
+          <img src="../img/icons/search.svg" alt="" class="btn-icon-sm">
+          <span>Buscar</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="user-actions">
+      <a href="#favoritos" class="user-btn">
+        <img src="../img/icons/borderstar.svg" alt="" class="btn-icon-sm">
+        <span>Favoritos</span>
+      </a>
+      <a href="#carrito" class="user-btn" aria-label="Carrito de compras con 0 artículos">
+        <img src="../img/icons/cart.svg" alt="" class="btn-icon-sm">
+        <span>Carrito (0)</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. Banner de Cabecera -->
+    <section class="hero-about" style="background-image: url('../img/hero/hero-about.png');">
+      <span class="badge">Nuestra Historia &amp; Propósito</span>
+      <h1>Reinventando el Consumo Cotidiano para un Futuro Sostenible</h1>
+      <p>
+        Creemos en millones de personas haciendo cambios conscientes todos los días.
+      </p>
+    </section>
+
+    <section class="mission-vision-section" aria-label="Misión y Visión">
+      <div class="mission-vision-grid">
+        
+        <article class="mission-card">
+          <h2>Nuestra Misión</h2>
+          <p>
+            Facilitar la transición hacia un estilo de vida sustentable con alternativas duraderas y libres de plástico de un solo uso.
+          </p>
+        </article>
+
+        <article class="vision-card">
+          <h2>Nuestra Visión</h2>
+          <p>
+            Ser el mercado digital de referencia en consumo consciente, uniendo transparencia, calidad e impacto ambiental positivo.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    
+    <section class="pillars-section">
+      <h2>Lo Que Nos Mueve</h2>
+      <p class="pillars-subtitle">Principios guiadores detrás de cada decisión que tomamos.</p>
+
+      <div class="pillars-grid">
+        
+        <article class="pillar-card">
+          <h3>
+            <img src="../img/icons/boton1.svg" alt="" class="icon">
+            100% Sin Plásticos
+          </h3>
+          <p>Empaques compostables y reutilizables.</p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>
+            <img src="../img/icons/boton2.svg" alt="" class="icon">
+            Comercio Justo
+          </h3>
+          <p>Apoyo directo a productores y artesanos locales.</p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>
+            <img src="../img/icons/boton3.svg" alt="" class="icon">
+            Transparencia
+          </h3>
+          <p>Etiquetado claro sobre el origen de cada material.</p>
+        </article>
+
+        <article class="pillar-card">
+          <h3>
+            <img src="../img/icons/boton4.svg" alt="" class="icon">
+            Huella Neutra
+          </h3>
+          <p>Proyectos de reforestación para compensar envíos.</p>
+        </article>
+
+      </div>
+    </section>
+
+    
+    <section class="about-cta">
+      <h2>¿Listo para dar el primer paso hacia un hogar consciente?</h2>
+      <p>Descubre nuestra variedad de productos diseñados para durar y cuidar el planeta.</p>
+      <div class="cta-buttons">
+        <a href="productos.html" class="btn btn-primary">Explorar Catálogo</a>
+        <a href="contacto.html" class="btn btn-secondary">Ir a Contacto</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer>
+    <div class="footer-columns">
+      
+      <div class="footer-col">
+        <h3>EcoMarket</h3>
+        <p>Tu mercado digital de confianza para productos sostenibles, reutilizables y éticos.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="productos.html">Catálogo Completo</a></li>
+          <li><a href="sobre-nosotros.html">Nuestra Historia</a></li>
+          <li><a href="contacto.html">Contacto &amp; Soporte</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>Email: <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a></p>
+        <p>Teléfono: <a href="tel:+573171236789">+57 (317) 123 6789</a></p>
+        <p>Ubicación: Bucaramanga, Santander</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 EcoMarket. Todos los derechos reservados. Diseñado para un consumo consciente.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

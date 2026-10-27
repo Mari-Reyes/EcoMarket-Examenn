@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMarket | Mercado Digital de Productos Sustentables</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header>
+    <a href="../index.html" class="logo">EcoMarket</a>
+    
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="productos.html">Catálogo</a></li>
+        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <form role="search" action="/buscar" method="get" class="header-search">
+      <div class="search-input-wrapper">
+        <input 
+          type="search" 
+          id="search-input" 
+          name="q" 
+          placeholder="Buscar productos ecológicos..." 
+          required
+        >
+        <button type="submit" aria-label="Buscar">
+          <img src="../img/icons/search.svg" alt="" class="btn-icon-sm">
+          <span>Buscar</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="user-actions">
+      <a href="#favoritos" class="user-btn">
+        <img src="../img/icons/borderstar.svg" alt="" class="btn-icon-sm">
+        <span>Favoritos</span>
+      </a>
+      <a href="#carrito" class="user-btn" aria-label="Carrito de compras con 0 artículos">
+        <img src="../img/icons/cart.svg" alt="" class="btn-icon-sm">
+        <span>Carrito (0)</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+
+    <section class="hero-contact" style="background-image: url('../img/hero/hero-contact.png');">
+      <span class="badge">Estamos para Ayudarte</span>
+      <h1>Ponte en Contacto con Nosotros</h1>
+      <p>
+        ¿Tienes dudas sobre un producto, tu pedido o quieres colaborar con EcoMarket? 
+        Escríbenos y nuestro equipo te responderá en menos de 24 horas.
+      </p>
+    </section>
+
+    
+    <section class="contact-channels" aria-label="Canales Directos de Atención">
+      <h2>Canales Directos</h2>
+      <div class="channels-grid">
+        
+        <article class="channel-card">
+          <h3>
+            <img src="../img/icons/mail.svg" alt="" class="icon">
+            Atención por Email
+          </h3>
+          <p>Para consultas generales, devoluciones o seguimiento de envíos.</p>
+          <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a>
+        </article>
+
+        <article class="channel-card">
+          <h3>
+            <img src="../img/icons/phone.svg" alt="" class="icon">
+            Línea Telefónica &amp; WhatsApp
+          </h3>
+          <p>Disponible de lunes a viernes, de 8:00 a.m. a 6:00 p.m.</p>
+          <a href="tel:+573171236789">+57 (317) 123 6789</a>
+        </article>
+
+        <article class="channel-card">
+          <h3>
+            <img src="../img/icons/location.svg" alt="" class="icon">
+            Centro de Distribución
+          </h3>
+          <p>Visita nuestras oficinas centrales o punto de recolección.</p>
+          <address>Bucaramanga, Santander, Colombia</address>
+        </article>
+
+      </div>
+    </section>
+
+    
+    <section class="contact-form-section">
+      <h2>Envíanos un Mensaje</h2>
+      <p>Dinos cómo podemos ayudarte y nos pondremos en contacto contigo lo antes posible.</p>
+
+      <form action="/enviar-contacto" method="post" class="contact-form">
+        
+        <div class="form-group">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Camila Morales" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="asunto">Asunto de la consulta *</label>
+          <select id="asunto" name="asunto" required>
+            <option value="" disabled selected>Selecciona una opción...</option>
+            <option value="pedido">Estado de mi pedido / Envío</option>
+            <option value="producto">Información sobre productos</option>
+            <option value="devolucion">Devoluciones y garantías</option>
+            <option value="alianza">Alianzas comerciales / Proveedores</option>
+            <option value="otro">Otro asunto</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje o consulta detallada aquí..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+      </form>
+    </section>
+
+
+    <section class="faq-section">
+      <h2>Preguntas Frecuentes</h2>
+      <p>Quizá la respuesta a tu duda ya se encuentra aquí:</p>
+
+      <div class="faq-grid">
+        <details>
+          <summary><strong>¿Cuánto tardan en entregar un pedido?</strong></summary>
+          <p>En el área metropolitana de Bucaramanga entregamos entre 24 y 48 horas hábiles. Para envíos nacionales, de 2 a 5 días hábiles.</p>
+        </details>
+
+        <details>
+          <summary><strong>¿Cómo garantizan que el envío sea 100% libre de plástico?</strong></summary>
+          <p>Utilizamos cajas de cartón reciclado, cinta de papel kraft con adhesivo vegetal y de empaque viruta de papel biodegradables.</p>
+        </details>
+
+        <details>
+          <summary><strong>¿Puedo devolver o cambiar un producto?</strong></summary>
+          <p>Sí, dispones de 30 días calendario tras recibir tu compra para solicitar un cambio o reembolso sin costo adicional.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+ 
+  <footer>
+    <div class="footer-columns">
+      
+      <div class="footer-col">
+        <h3>EcoMarket</h3>
+        <p>Tu mercado digital de confianza para productos sostenibles, reutilizables y éticos.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="productos.html">Catálogo Completo</a></li>
+          <li><a href="sobre-nosotros.html">Nuestra Historia</a></li>
+          <li><a href="contacto.html">Contacto &amp; Soporte</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>Email: <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a></p>
+        <p>Teléfono: <a href="tel:+573171236789">+57 (317) 123 6789</a></p>
+        <p>Ubicación: Bucaramanga, Santander</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 EcoMarket. Todos los derechos reservados. Diseñado para un consumo consciente.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

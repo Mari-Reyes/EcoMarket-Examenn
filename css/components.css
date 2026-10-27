@@ -1,0 +1,414 @@
+/* ==========================================================================
+   EcoMarket — components.css (Componentes, tarjetas, imágenes e iconos)
+   ========================================================================== */
+
+/* Íconos circulares */
+.icon {
+  box-sizing: content-box;
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+  border: var(--line-strong);
+  border-radius: 50%;
+  background: var(--card);
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Botones y Badges */
+.btn,
+.btn-add,
+.product-card > button:not(.favorite-btn),
+form button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border: 1.5px solid var(--green);
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--card);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn-add:hover,
+.product-card > button:not(.favorite-btn):hover,
+form button[type="submit"]:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--card);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: var(--line-strong);
+  color: var(--ink);
+}
+.btn-secondary:hover {
+  background: var(--sand);
+  border-color: var(--cacao);
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.9rem;
+  border: 1.5px solid var(--green);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--green-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem var(--gutter);
+  background: var(--bg);
+  border-bottom: var(--line-strong);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+.logo::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: var(--green);
+  border-radius: 0 100% 0 100%;
+  transform: rotate(-8deg);
+}
+
+nav ul { display: flex; gap: 0.25rem; }
+nav a {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+nav a:hover { background: var(--sand); }
+
+header form[role="search"] {
+  display: flex;
+  flex: 1;
+  max-width: 380px;
+  margin-left: auto;
+  position: relative;
+}
+header form[role="search"] input {
+  width: 100%;
+  padding: 0.55rem 5.5rem 0.55rem 1rem;
+  border: var(--line-strong);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+}
+header form[role="search"] button {
+  position: absolute;
+  top: 3px; right: 3px; bottom: 3px;
+  padding: 0 1rem;
+  font-size: 0.85rem;
+}
+
+.user-actions { display: flex; align-items: center; gap: 0.5rem; }
+.user-actions a {
+  padding: 0.4rem 0.8rem;
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Heros */
+.hero, .hero-contact, .hero-about, .hero-catalog {
+  padding: clamp(2.5rem, 7vw, 4rem) clamp(1.25rem, 5vw, 3rem);
+  text-align: center;
+  background-color: var(--sand);
+  border: var(--line-strong);
+  border-radius: var(--radius-lg);
+}
+.hero p, .hero-contact p, .hero-about p, .hero-catalog p {
+  max-width: 60ch;
+  margin-inline: auto;
+  color: var(--muted);
+}
+
+/* Tarjetas de Producto */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: var(--card);
+  border: var(--line);
+  border-radius: var(--radius);
+}
+.product-card:hover { border-color: var(--cacao); }
+
+.product-badge {
+  align-self: flex-start;
+  max-width: calc(100% - 2.75rem);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(192, 108, 61, 0.14);
+  color: var(--terracotta-ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.price { margin: 0; font-weight: 800; color: var(--green-dark); }
+
+.product-img-wrapper {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--sand);
+  border: var(--line);
+  border-radius: 12px;
+}
+.product-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+.product-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px; height: 36px;
+  padding: 0;
+  background: var(--card);
+  border: var(--line-strong);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.favorite-btn img { width: 18px; height: 18px; }
+
+/* Filtros y Formularios */
+.filter-group {
+  padding: 1.1rem;
+  background: var(--card);
+  border: var(--line);
+  border-radius: var(--radius);
+}
+.filter-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.filter-list label { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; cursor: pointer; }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: var(--card);
+  border: var(--line-strong);
+  border-radius: var(--radius-lg);
+}
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: var(--line-strong);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
+
+/* Footer */
+footer { background: var(--sand); border-top: var(--line-strong); }
+.footer-bottom { padding: 1rem var(--gutter); text-align: center; border-top: 1.5px solid rgba(74, 59, 50, 0.25); }
+
+/* --- Tamaño controlado para los iconos de botones del header --- */
+.btn-icon-sm {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* --- Botones de usuario (Favoritos / Carrito) --- */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border: var(--line-strong);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.user-btn:hover {
+  background: var(--sand);
+  border-color: var(--green);
+}
+
+/* --- Corregir la Lupa Gigante de la Barra Lateral --- */
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  width: 18px; /* Forzamos tamaño pequeño */
+  height: 18px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.55rem 0.75rem 0.55rem 2.25rem; /* Dejamos espacio para el icono */
+  border: var(--line-strong);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+/* --- Contenedor del ordenador --- */
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* --- Estilo personalizado del <select> --- */
+.sort-options select {
+  padding: 0.45rem 2.2rem 0.45rem 1rem;
+  border: var(--line-strong);
+  border-radius: 999px;            /* Forma de píldora redondeada */
+  background-color: var(--card);    /* Fondo claro de tarjetas */
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  
+  /* Quita la flecha nativa tosca del sistema operativo */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Añade una flecha personalizada suave usando un SVG inline */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a3b32' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+/* --- Estados Hover y Focus --- */
+.sort-options select:hover {
+  background-color: var(--sand);
+  border-color: var(--green);
+}
+
+.sort-options select:focus-visible {
+  border-color: var(--green);
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+}
+
+/* --- Estilo unificado para los encabezados (Hero) de todas las páginas --- */
+.hero, 
+.hero-catalog, 
+.hero-about, 
+.hero-contact {
+  /* Capa semitransparente clara + tu imagen de fondo */
+  background-image: linear-gradient(
+      rgba(245, 245, 220, 0.85), 
+      rgba(245, 245, 220, 0.85)
+    ), 
+    url('../img/hero/hero-about.svg'); /* Puedes cambiar la imagen por página si lo deseas */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 1.5rem auto;
+  max-width: 1200px; /* Para que no se peguen a los bordes de la pantalla */
+}
+
+/* --- Estilo visible y legible para los párrafos de todos los Hero --- */
+.hero p, 
+.hero-catalog p, 
+.hero-about p, 
+.hero-contact p {
+  color: #1b261b;             /* Verde oscuro de alta legibilidad */
+  font-size: 1.15rem;          /* Letra más grande y cómoda */
+  font-weight: 600;            /* Semi-negrita para mayor cuerpo */
+  line-height: 1.6;            /* Espaciado limpio entre líneas */
+  max-width: 650px;            /* Evita que las líneas sean muy largas */
+  margin: 1.25rem auto 2rem;   /* Centrado automático */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Sombra suave para separar de la foto */
+}
+
+.newsletter-form {
+  flex-wrap: wrap; /* Permite que los elementos bajen de línea si no caben juntos */
+  width: 100%;
+}
+
+.newsletter-form input[type="email"], 
+.newsletter-form button {
+  width: 100%; /* Ocupan todo el ancho disponible para facilitar la interacción táctil */
+}
+
+/* Menú de navegación deslizable horizontalmente si es muy largo */
+nav {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}

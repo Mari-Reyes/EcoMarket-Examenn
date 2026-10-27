@@ -1,0 +1,305 @@
+/* ==========================================================================
+   EcoMarket — layout.css (Estructura de cuadrículas y responsive)
+   ========================================================================== */
+
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem var(--gutter) clamp(2.5rem, 6vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero-buttons, .cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.benefits, .pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.75rem 0; }
+.mission-vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+.catalog-container {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.catalog-filters {
+  position: sticky;
+  top: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.4fr;
+  gap: 2rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2.5rem var(--gutter);
+}
+
+/* Breakpoints Responsive */
+@media (max-width: 1000px) {
+  .product-grid, .benefits, .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .catalog-container { grid-template-columns: 1fr; }
+  .catalog-filters { position: static; }
+}
+
+@media (max-width: 768px) {
+  header { flex-wrap: wrap; }
+  header form[role="search"] { order: 3; flex: 1 1 100%; max-width: none; }
+  nav { order: 4; flex: 1 1 100%; overflow-x: auto; }
+  
+  .channels-grid, .mission-vision-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .footer-columns { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Estructura Principal del Catálogo (Filtros a la izq, Productos a la der) --- */
+.catalog-container {
+  display: grid;
+  grid-template-columns: 260px 1fr; /* Filtros fijos / Productos ocupan todo el resto */
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+}
+
+/* --- Cuadrícula Multicolumna de Productos (Ocupa toda la pantalla disponible) --- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Crea columnas dinámicas según el espacio */
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Asegurar que las tarjetas de productos se adapten al contenedor */
+.product-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- Contenedor Principal del Newsletter --- */
+.newsletter-section {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background-color: var(--card); /* Fondo contrastado estilo tarjeta */
+  border: var(--line-strong);
+  border-radius: 20px;
+  max-width: 680px;
+  margin: 3rem auto; /* Centrado en la página */
+}
+
+.newsletter-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.newsletter-section p {
+  color: var(--ink);
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+/* --- Formulario y Caja de Entrada --- */
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  border: var(--line-strong);
+  border-radius: 999px; /* Bordes totalmente redondeados estilo píldora */
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+/* --- Botón "Suscribirme" --- */
+.newsletter-form button {
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--green);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* --- Agrandar el círculo contenedor del icono --- */
+.value-icon, .feature-icon, .icon-circle {
+  width: 75px;   /* Cambia este valor para hacer el círculo más grande (ej: 80px o 90px) */
+  height: 75px;  /* Debe ser igual al width para que se mantenga perfectamente redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: var(--line-strong);
+  background-color: var(--card);
+  margin-bottom: 1rem;
+}
+
+/* --- Agrandar la imagen o icono SVG que va dentro --- */
+.value-icon img, .feature-icon img, .icon-circle img {
+  width: 36px;   /* Aumenta este valor para que el icono se vea más grande (ej: 40px) */
+  height: 36px;
+  object-fit: contain;
+}
+
+
+/* ==========================================================================
+   ENCABEZADOS (HERO) UNIFICADOS PARA LAS 4 PÁGINAS
+   ========================================================================== */
+
+/* 1. Estilo base y capas de fondo para todas las secciones Hero */
+.hero, 
+.hero-catalog, 
+.hero-about, 
+.hero-contact {
+  /* Capa semitransparente clara para dar alto contraste sobre cualquier imagen */
+  background-image: linear-gradient(
+      rgba(245, 245, 220, 0.55), 
+      rgba(245, 245, 220, 0.55)
+    ), 
+    url('../img/hero/hero.index.png'); /* Imagen de fondo predeterminada */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 1.5rem auto;
+  max-width: 1200px;
+}
+
+/* 2. Estilos para que los títulos principales resalten */
+.hero h1, 
+.hero-catalog h1, 
+.hero-about h1, 
+.hero-contact h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+/* 3. Estilos de alta legibilidad para los párrafos de todos los Hero */
+.hero p, 
+.hero-catalog p, 
+.hero-about p, 
+.hero-contact p {
+  color: #1b261b;             /* Verde oscuro profundo para máximo contraste */
+  font-size: 1.15rem;          /* Tamaño de letra más cómodo y legible */
+  font-weight: 600;            /* Letra semi-negrita */
+  line-height: 1.6;            /* Espaciado claro entre líneas */
+  max-width: 650px;            /* Limita el ancho del texto */
+  margin: 1.25rem auto 2rem;   /* Centra el párrafo automáticamente */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Sombra clara de resalte */
+}
+
+/* --- Corrección para celulares (pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+  
+  /* 1. Hace que los filtros y la cuadrícula de productos pasen a una sola columna */
+  .catalog-container {
+    grid-template-columns: 1fr !important; /* Pasa de 2 columnas a 1 columna vertical */
+    gap: 1.5rem;
+    width: 100%;
+    overflow: hidden; /* Evita que el contenedor empuje hacia la derecha */
+  }
+
+  /* 2. Ajusta los productos para que quepan en la pantalla del celular */
+  .products-grid, 
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Muestra 2 productos por fila */
+    gap: 0.75rem; /* Reduce el espacio entre tarjetas */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 3. Asegura que las tarjetas no se salgan */
+  .product-card {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 4. Mantiene las imágenes dentro de su tarjeta */
+  .product-img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* --- Para pantallas de celulares muy pequeños (menores a 480px) --- */
+@media (max-width: 480px) {
+  /* Si prefieres que se vea 1 solo producto grande por fila en teléfonos pequeños: */
+  .products-grid, 
+  .product-grid {
+    grid-template-columns: 1fr !important; /* 1 producto por fila */
+  }
+}
