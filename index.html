@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMarket | Mercado Digital de Productos Sustentables</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">EcoMarket</a>
+    
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="../EcoMarket/views/productos.html">Catálogo</a></li>
+        <li><a href="../EcoMarket/views/sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="../EcoMarket/views/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+
+<form role="search" action="..." method="get" class="header-search">
+    <div class="search-input-wrapper">
+      <input 
+        type="search" 
+        id="search-input" 
+        name="q" 
+        placeholder="Buscar productos ecológicos..." 
+        required
+      >
+      <button type="submit" aria-label="Buscar">
+        <img src="../EcoMarket/img/icons/search.svg" alt="" class="btn-icon-sm">
+        <span>Buscar</span>
+      </button>
+    </div>
+  </form>
+
+  <div class="user-actions">
+    <a href="#favoritos" class="user-btn">
+      <img src="../EcoMarket/img/icons/borderstar.svg" alt="" class="btn-icon-sm">
+      <span>Favoritos</span>
+    </a>
+    <a href="#carrito" class="user-btn" aria-label="Carrito de compras con 0 artículos">
+      <img src="../EcoMarket/img/icons/cart.svg" alt="" class="btn-icon-sm">
+      <span>Carrito (0)</span>
+    </a>
+  </div>
+</header>
+
+
+  <main id="inicio">
+
+    <section class="hero" style="background-image: url('../EcoMarket/img/hero/hero.index.png');">
+      <span class="badge">Estilo de vida 100% sustentable</span>
+      <h1>Productos Sustentables para un Hogar Consciente</h1>
+      <p>
+        Descubre nuestra selección de artículos ecológicos, libres de plástico y de comercio justo para tu día a día. 
+        Pequeños cambios en casa que transforman el planeta.
+      </p>
+      <div class="hero-buttons">
+        <a href="../EcoMarket/views/productos.html" class="btn btn-primary">Explorar Catálogo</a>
+        <a href="../EcoMarket/views/sobre-nosotros.html" class="btn btn-secondary">Conoce Nuestra Historia</a>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Beneficios Ecológicos">
+      <div class="benefit-item">
+        <h3>
+            <img src="../EcoMarket/img/icons/boton1.svg" alt="" class="icon">
+            100% Libre de Plástico
+        </h3>
+        <p>Empaques biodegradables, compostables o de frascos reutilizables.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>
+            <img src="../EcoMarket/img/icons/boton2.svg" alt="" class="icon">
+            100% Vegano
+        </h3>
+        <p>Alternativas naturales y éticas que respetan la vida animal y el planeta.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>
+            <img src="../EcoMarket/img/icons/boton3.svg" alt="" class="icon">
+            Comercio Justo
+        </h3>
+        <p>Apoyamos a productores éticos y artesanos locales con salarios dignos.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>
+            <img src="../EcoMarket/img/icons/boton4.svg" alt="" class="icon">
+            Envíos Carbono Neutral
+        </h3>
+        <p>Compensamos la huella de carbono de cada entrega que llega a tu puerta.</p>
+      </div>
+
+    </section>
+
+
+    <section id="catalogo" class="categories">
+      <h2>Explora por Categoría</h2>
+      <p>Todo lo que necesitas para un consumo responsable.</p>
+      
+      <div class="category-grid">
+        <article class="category-card">
+          <h3>Cocina &amp; Comedor Zero Waste</h3>
+          <a href="#cocina">Ver productos</a>
+        </article>
+
+        <article class="category-card">
+          <h3>Cuidado Personal &amp; Baño Botánico</h3>
+          <a href="#cuidado-personal">Ver productos</a>
+        </article>
+
+        <article class="category-card">
+          <h3>Organización &amp; Limpieza Verde</h3>
+          <a href="#limpieza">Ver productos</a>
+        </article>
+
+        <article class="category-card">
+          <h3>Textiles Orgánicos &amp; Confort</h3>
+          <a href="#textiles">Ver productos</a>
+        </article>
+
+        <article class="category-card">
+          <h3>Esenciales para el Día a Día</h3>
+          <a href="#esenciales">Ver productos</a>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="featured-products">
+      <h2>Favoritos de la Comunidad</h2>
+      <p>Nuestros productos más populares para iniciar tu transición ecológica.</p>
+
+      <div class="product-grid">
+        <!-- Producto 1 -->
+        <article class="product-card">
+          <span class="product-badge">Fibra de Bambú &amp; Madera de Bambú</span>
+          <h3>Terrabox Bento</h3>
+          <p class="price">$24.00 USD</p>
+          <button type="button">Agregar al carrito</button>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="product-card">
+          <span class="product-badge">Aceites Orgánicos &amp; Cítricos Naturales</span>
+          <h3>Citrus Botanical Soap Bar</h3>
+          <p class="price">$9.50 USD</p>
+          <button type="button">Agregar al carrito</button>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="product-card">
+          <span class="product-badge">Lona de Algodón Orgánico &amp; Yute</span>
+          <h3>Zenith Kitchen Apron</h3>
+          <p class="price">$9.50</p>
+          <button type="button">Agregar al carrito</button>
+        </article>
+
+        <!-- Producto 4 -->
+        <article class="product-card">
+          <span class="product-badge">Lona de Algodón Reciclado</span>
+          <h3>Urban Canvas Tote</h3>
+          <p class="price">$22.00 USD</p>
+          <button type="button">Agregar al carrito</button>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="sobre-nosotros" class="about-brand">
+      <h2>Comprar Sustentable Ahora Es Fácil</h2>
+      <p>
+        En EcoMarket evaluamos rigurosamente cada artículo para garantizar que sea seguro para ti y para el planeta. 
+        Eliminamos las dudas para que compres con total transparencia y confianza.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <strong class="stat-number">+5,000</strong>
+          <span class="stat-label">Hogares transformados</span>
+        </div>
+        <div class="stat-item">
+          <strong class="stat-number">100%</strong>
+          <span class="stat-label">Materiales certificados</span>
+        </div>
+        <div class="stat-item">
+          <strong class="stat-number">0%</strong>
+          <span class="stat-label">Plásticos de un solo uso</span>
+        </div>
+      </div>
+
+      <a href="#historia-completa" class="btn">Saber más sobre nosotros</a>
+    </section>
+
+
+    <section class="testimonials">
+      <h2>Lo Que Dice Nuestra Comunidad</h2>
+
+      <div class="testimonials-grid">
+        <blockquote class="testimonial-card">
+          <p>"La calidad del Boreal Cover Set es increíble. Llevo meses sin usar papel film en la cocina."</p>
+          <footer>— <cite>Mariana G.</cite>, Compradora Verificada</footer>
+        </blockquote>
+
+        <blockquote class="testimonial-card">
+          <p>"Me encanta la transparencia de EcoMarket. Los envíos son rapidísimos y todo viene sin una gota de plástico."</p>
+          <footer>— <cite>Carlos R.</cite>, Comprador Verificado</footer>
+        </blockquote>
+      </div>
+    </section>
+
+
+    <section class="newsletter-section">
+      <h2>Únete al Cambio Verde</h2>
+      <p>Suscríbete a nuestro boletín para recibir consejos de vida sostenible, noticias y un 10% de descuento en tu primera compra.</p>
+  
+    <form class="newsletter-form" action="#" method="post">
+      <input 
+        type="email" 
+        placeholder="Tu correo electrónico..." 
+        required 
+        aria-label="Tu correo electrónico"
+      >
+      <button type="submit">Suscribirme</button>
+    </form>
+  </section>
+
+  </main>
+
+
+  <footer id="contacto">
+    <div class="footer-columns">
+      
+
+      <div class="footer-col">
+        <h3>EcoMarket</h3>
+        <p>Tu mercado digital de confianza para productos sostenibles, reutilizables y éticos.</p>
+      </div>
+
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+          <li><a href="../EcoMarket/views/productos.html">Catálogo Completo</a></li>
+          <li><a href="../EcoMarket/views/sobre-nosotros.html">Nuestra Historia</a></li>
+          <li><a href="../EcoMarket/views/contacto.html">Contacto &amp; Soporte</a></li>
+        </ul>
+      </div>
+
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>Email: <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a></p>
+        <p>Teléfono: <a href="tel:+525512345678">+57 (317) 123 6789</a></p>
+        <p>Ubicación: Bucaramanga, Santander</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 EcoMarket. Todos los derechos reservados. Diseñado para un consumo consciente.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
