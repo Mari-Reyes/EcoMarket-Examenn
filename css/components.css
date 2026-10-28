@@ -1,6 +1,6 @@
 /* ==========================================================================
-   EcoMarket — components.css (Componentes, tarjetas, imágenes e iconos)
-   ========================================================================== */
+  EcoMarket — components.css (Componentes, tarjetas, imágenes e iconos)
+  ========================================================================== */
 
 /* Íconos circulares */
 .icon {
@@ -381,34 +381,28 @@ footer { background: var(--sand); border-top: var(--line-strong); }
   max-width: 1200px; /* Para que no se peguen a los bordes de la pantalla */
 }
 
-/* --- Estilo visible y legible para los párrafos de todos los Hero --- */
-.hero p, 
-.hero-catalog p, 
-.hero-about p, 
-.hero-contact p {
-  color: #1b261b;             /* Verde oscuro de alta legibilidad */
-  font-size: 1.15rem;          /* Letra más grande y cómoda */
-  font-weight: 600;            /* Semi-negrita para mayor cuerpo */
-  line-height: 1.6;            /* Espaciado limpio entre líneas */
-  max-width: 650px;            /* Evita que las líneas sean muy largas */
-  margin: 1.25rem auto 2rem;   /* Centrado automático */
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Sombra suave para separar de la foto */
+.offer {
+grid-template-columns: (1, 2fr);
+background-color: #c06c3d;
+border-color: var(--green);
+border-radius: 50px;
+margin: #4a3b32;
+padding: 3rem;
+border: var(--line-strong);
 }
 
-.newsletter-form {
-  flex-wrap: wrap; /* Permite que los elementos bajen de línea si no caben juntos */
-  width: 100%;
+.text {
+  display: block;
+  background-color: #e6e2d3;
+  border-radius: 20px;
+  padding: 1rem;
 }
 
-.newsletter-form input[type="email"], 
-.newsletter-form button {
-  width: 100%; /* Ocupan todo el ancho disponible para facilitar la interacción táctil */
-}
-
-/* Menú de navegación deslizable horizontalmente si es muy largo */
-nav {
-  width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+.spam {
+  background-color: #8a4a26;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 900;
+  margin-top: 15px;
+  margin-top: 3px;
 }

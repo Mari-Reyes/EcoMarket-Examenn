@@ -71,27 +71,6 @@ main {
   padding: 2.5rem var(--gutter);
 }
 
-/* Breakpoints Responsive */
-@media (max-width: 1000px) {
-  .product-grid, .benefits, .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-  .catalog-container { grid-template-columns: 1fr; }
-  .catalog-filters { position: static; }
-}
-
-@media (max-width: 768px) {
-  header { flex-wrap: wrap; }
-  header form[role="search"] { order: 3; flex: 1 1 100%; max-width: none; }
-  nav { order: 4; flex: 1 1 100%; overflow-x: auto; }
-  
-  .channels-grid, .mission-vision-grid, .testimonials-grid { grid-template-columns: 1fr; }
-  .footer-columns { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 560px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-  .stats-grid { grid-template-columns: 1fr; }
-}
-
 /* --- Estructura Principal del Catálogo (Filtros a la izq, Productos a la der) --- */
 .catalog-container {
   display: grid;
@@ -208,32 +187,12 @@ main {
   object-fit: contain;
 }
 
-
-/* ==========================================================================
-   ENCABEZADOS (HERO) UNIFICADOS PARA LAS 4 PÁGINAS
-   ========================================================================== */
-
-/* 1. Estilo base y capas de fondo para todas las secciones Hero */
-.hero, 
-.hero-catalog, 
-.hero-about, 
-.hero-contact {
-  /* Capa semitransparente clara para dar alto contraste sobre cualquier imagen */
-  background-image: linear-gradient(
-      rgba(245, 245, 220, 0.55), 
-      rgba(245, 245, 220, 0.55)
-    ), 
-    url('../img/hero/hero.index.png'); /* Imagen de fondo predeterminada */
-  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  padding: 4rem 2rem;
-  text-align: center;
-  margin: 1.5rem auto;
-  max-width: 1200px;
-}
+  /* Ajusta los espacios internos (padding y márgenes) de las secciones principales */
+  .hero {
+    padding: 2.5rem 1rem;
+    margin: 1rem;
+    width: auto;
+  }
 
 /* 2. Estilos para que los títulos principales resalten */
 .hero h1, 
@@ -302,4 +261,29 @@ main {
   .product-grid {
     grid-template-columns: 1fr !important; /* 1 producto por fila */
   }
+}
+
+/* Breakpoints Responsive */
+@media (max-width: 1000px) {
+  .benefits, .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .catalog-container { grid-template-columns: 1fr; 
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+  .catalog-filters { position: static; }
+}
+
+@media (max-width: 768px) {
+  header { flex-wrap: wrap; }
+  header form[role="search"] { order: 3; flex: 1 1 100%; max-width: none; }
+  nav { order: 4; flex: 1 1 100%; overflow-x: auto; }
+  
+  .channels-grid, .mission-vision-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .footer-columns { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .stats-grid { grid-template-columns: 1fr; }
 }

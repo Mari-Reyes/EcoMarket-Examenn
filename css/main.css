@@ -1,6 +1,6 @@
 /* ==========================================================================
-   EcoMarket — main.css (Variables, reset y reglas globales por página)
-   ========================================================================== */
+  EcoMarket — main.css (Variables, reset y reglas globales por página)
+  ========================================================================== */
 
 :root {
   --green: #27ae60;
@@ -109,7 +109,8 @@ html, body {
   
   header {
     display: flex;
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     padding: 0.75rem 1rem;
     gap: 0.75rem;
@@ -194,23 +195,6 @@ img {
 }
 
 @media (max-width: 768px) {
-  /* Convierte las cuadrículas múltiples en una sola columna en pantallas medianas/pequeñas */
-  .benefits, .product-grid, .footer-columns {
-    grid-template-columns: 1fr;
-  }
-  
-  /* Ajusta los espacios internos (padding y márgenes) de las secciones principales */
-  .hero {
-    padding: 2.5rem 1rem;
-    margin: 1rem;
-    width: auto;
-  }
-}
-
-@media (max-width: 560px) {
-  /* Para celulares muy pequeños, permite catálogos de 2 columnas compactas */
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
+/* Convierte las cuadrículas múltiples en una sola columna en pantallas medianas/pequeñas */
+.benefits, .product-grid, .footer-columns { grid-template-columns: 1fr;}
 }
