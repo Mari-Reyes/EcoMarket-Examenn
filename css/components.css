@@ -389,6 +389,7 @@ border-radius: 50px;
 margin: #4a3b32;
 padding: 3rem;
 border: var(--line-strong);
+text-decoration-color: black;
 }
 
 .text {
@@ -405,4 +406,23 @@ border: var(--line-strong);
   font-weight: 900;
   margin-top: 15px;
   margin-top: 3px;
+}
+
+.contador {
+  display: block;
+  background-color: #4a3b32;
+  margin-bottom: 5px;
+  border-radius: 30px;
+  text-align: center;
+  width: 90px;
+  margin: 20px;
+  text-color: black;
+}
+
+.catalog-container {
+  display: block;
+  background-color: #4a3b32;
+  margin-bottom: 5px;
+  border-radius: 30px;
+  text-align: center;
 }
